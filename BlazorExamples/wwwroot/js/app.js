@@ -1,5 +1,4 @@
-function exampleFunction()
-{
+function exampleFunction() {
     alert("Hello People");
 }
 
