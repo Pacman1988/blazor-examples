@@ -1,0 +1,18 @@
+﻿@page "/partitial-auth"
+
+<h3>Partitial Auth</h3>
+<p>With Login you see the Power Counter!</p>
+<AuthorizeView>
+    <Authorized>
+        <h4>Power Counter</h4>
+        <Counter IncrementBy="500" startingValue="1000"/>
+    </Authorized>
+    <NotAuthorized>
+        <h4>Normal Counter</h4>
+        <Counter />
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+}
