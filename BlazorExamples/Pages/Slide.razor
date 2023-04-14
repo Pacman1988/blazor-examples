@@ -1,0 +1,29 @@
+﻿@page "/slide"
+
+<h3>Energy Cost Calculator (Slider)</h3>
+
+<form class="dialog-body">
+    <div>
+        <div>
+        <label>Burning time hours per day (@BurningTime h)</label>
+        <input type="range" min="1" max="24" step="1" @bind="BurningTime" @bind:event="oninput" />
+        </div>
+        <div>
+        <label>Count of light sources(@Count)</label>
+        <input type="range" min="1" max="10" step="1" @bind="Count" @bind:event="oninput" />
+        <div class="d-flex mb-3">
+        <EnergyCosts Costs="0.21" BurningTime="@BurningTime" Count="@Count" Watt="2.3" />
+        <EnergyCosts Costs="0.65" BurningTime="@BurningTime" Count="@Count" Watt="7" />
+        <EnergyCosts Costs="0.92" BurningTime="@BurningTime" Count="@Count" Watt="10" />
+        <EnergyCosts Costs="3.69" BurningTime="@BurningTime" Count="@Count" Watt="40" />
+        <EnergyCosts Costs="5.53" BurningTime="@BurningTime" Count="@Count" Watt="60" />
+        <EnergyCosts Costs="9.22" BurningTime="@BurningTime" Count="@Count" Watt="100" />
+        </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    private int BurningTime = 1;
+    private int Count = 1;
+}

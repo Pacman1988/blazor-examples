@@ -1,0 +1,35 @@
+﻿<div class="p-4 w-100 border">
+    <div>
+        <div class="text-center">
+            <i class="oi oi-sun" style="font-size: 3vh;" aria-hidden="true" role="presentation"></i>
+            <div class="bulbinfo">
+                <div class="fw-bold fs-3">@Watt Watt</div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-2">
+        @for (int i = 0; i < Count; i++)
+        {
+            <i class="oi oi-sun mx-2"> </i>
+        }
+    </div>
+    <div class="text-center">
+        <div style="font-size: 2vh; font-weight: 600;">
+            @CalculateCosts() €
+        </div> Costs per year
+    </div>
+</div>
+
+@code {
+
+    [Parameter, EditorRequired]
+    public double Costs { get; set; }
+    [Parameter, EditorRequired]
+    public int BurningTime { get; set; }
+    [Parameter, EditorRequired]
+    public int Count { get; set; }
+    [Parameter, EditorRequired]
+    public double Watt { get; set; }
+
+    private double CalculateCosts() => Math.Round(Costs * Count * BurningTime, 2);
+}
