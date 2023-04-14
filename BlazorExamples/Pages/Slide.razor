@@ -1,7 +1,7 @@
 ﻿@page "/slide"
 
 <h3>Energy Cost Calculator (Slider)</h3>
-
+<a href="https://energiebiene.com/energierechner" target="_blank">Example is inspired by the energy bee</a>
 <form class="dialog-body">
     <div>
         <div>
@@ -11,14 +11,14 @@
         <div>
         <label>Count of light sources(@Count)</label>
         <input type="range" min="1" max="10" step="1" @bind="Count" @bind:event="oninput" />
-        <div class="d-flex mb-3">
-        <EnergyCosts Costs="0.21" BurningTime="@BurningTime" Count="@Count" Watt="2.3" />
-        <EnergyCosts Costs="0.65" BurningTime="@BurningTime" Count="@Count" Watt="7" />
-        <EnergyCosts Costs="0.92" BurningTime="@BurningTime" Count="@Count" Watt="10" />
-        <EnergyCosts Costs="3.69" BurningTime="@BurningTime" Count="@Count" Watt="40" />
-        <EnergyCosts Costs="5.53" BurningTime="@BurningTime" Count="@Count" Watt="60" />
-        <EnergyCosts Costs="9.22" BurningTime="@BurningTime" Count="@Count" Watt="100" />
-        </div>
+            <div class="d-flex mb-3">
+            <EnergyCosts Costs="0.21" BurningTime="@BurningTime" Count="@Count" Watt="2.3" />
+            <EnergyCosts Costs="0.65" BurningTime="@BurningTime" Count="@Count" Watt="7" />
+            <EnergyCosts Costs="0.92" BurningTime="@BurningTime" Count="@Count" Watt="10" />
+            <EnergyCosts Costs="3.69" BurningTime="@BurningTime" Count="@Count" Watt="40" />
+            <EnergyCosts Costs="5.53" BurningTime="@BurningTime" Count="@Count" Watt="60" />
+            <EnergyCosts Costs="9.22" BurningTime="@BurningTime" Count="@Count" Watt="100" />
+            </div>
         </div>
     </div>
 </form>
