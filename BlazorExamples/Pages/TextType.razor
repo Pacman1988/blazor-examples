@@ -1,0 +1,26 @@
+﻿@page "/texttype"
+
+<h1>@IntroText</h1>
+
+@code {
+    int i = 0;
+    string text = "I LOVE YOU ALL <3 :-)";
+    public string IntroText { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        return TypeText();
+    }
+
+    public async Task TypeText()
+    {
+        if (i < text.Length)
+        {
+            IntroText += text[i];
+            i++;
+            StateHasChanged();
+            await Task.Delay(50);
+            await TypeText();
+        }
+    }
+}
